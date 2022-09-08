@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'Vazir-FD';
+    src: url('../fonts/Vazir-FD.woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+a {
+    text-decoration: none;
+}
+body {
+    font-family: 'Vazir-FD';
+    background-color: #f5eec2;
+}
+
+.header {
+    background-color: #39395f;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.main {
+    margin: 10px auto;
+    border: 2px solid #416a59;
+    height: 100px;
+    width: 50%;
+    background-color: #a9c25d;
+    border-radius: 1rem;
+    padding: 10px;
+}
+.search {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+#search-products {
+    border: 1px solid #73a24e;
+    border-left: 0;
+    border-radius: 0 1rem 1rem 0;
+    width: 100%;
+    padding: 1rem;
+    outline: 0;
+    font-family: 'Vazir-FD';
+}
+.search-box {
+    display: flex;
+    justify-content: center;
+}
+.search-icon {
+    background-color: #fff;
+    border-radius: 1rem 0 0 1rem;
+    border: 1px solid #73a24e;
+    border-right: 0;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #416a59;
+    padding: 0.5rem;
+}
+.available-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px){
+    .search {
+        display: flex;
+        flex-direction: column;
+    }
+}
