@@ -17,15 +17,12 @@
     <div class="main">
         <div class="search">
             <div class="search-box">
-                <input type="text" id="search-products" placeholder="جست و جو ...">
+                <input type="text" class="input search-products" id="search-products" placeholder="جست و جو ...">
                 <p class="search-icon">
                     <a href=""><i class="far fa-search"></i></a>
                 </p>
             </div>
             <div class="available-div">
-                <!-- <label>
-                    <input type="checkbox" id="available-products"> محصولات موجود
-                </label> -->
                 <section>
                     <input type="checkbox" id="one">
                     <label for="one">
@@ -34,14 +31,19 @@
                         <ins><i>محصولات موجود</i></ins>
                     </label>
                 </section>
-                <!-- <input id='one' type='checkbox' />
-                <label for='one'>
-                    <span></span>
-                    محصولات موجود
-                    <ins><span>محصولات موجود</span></ins>
-                </label> -->
             </div>
         </div>
+        <br>
+        <div class="add-product">
+            <form id="add-product-form">
+                <input type="text" class="input" name="productTitle" placeholder="عنوان محصول">
+                <input type="text" class="input" name="productPrice" placeholder="قیمت محصول">
+                <button class="add-btn">افزودن</button>
+            </form>
+        </div>
+    </div>
+    <div class="container" id="products">
+
     </div>
 </body>
 <script src="./scripts/app.js"></script>
