@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/editProductStyle.css">
+    <link rel="stylesheet" href="./styles/all.min.css">
+    <title>ویرایش محصول</title>
 </head>
 <body>
-    <div>Hiiiiiiiiiiiiiiii</div>
+    <div class="header">
+        ویرایش محصول
+    </div>
+    <div class="main">
+        <div class="main-page-link"><a href="./index.html">صفحه اصلی</a></div>
+        <div class="product-div">
+            <input type="text" class="input input-edit" id="product-title" placeholder="عنوان محصول">
+            <input type="text" class="input input-edit" id="product-price" placeholder="قیمت محصول">
+        </div>
+        <div class="edit-date">
+            <span>آخرین ویرایش:</span>
+            <span id="last-edit"></span>
+        </div>
+        <div class="remove-div">
+            <!-- <button class="remove-btn">حذف</button> -->
+            <button class="remove-btn" id="remove-btn">
+                <i class="fa-sharp fa-solid fa-trash-can"></i>
+            </button>
+        </div>
+    </div>
+    <script src="./scripts/moment.js"></script>
+    <script src="./scripts/jalali-moment.js"></script>
+    <script src="./scripts/functions.js"></script>
+    <script src="./scripts/edit-product.js"></script>
 </body>
 </html>

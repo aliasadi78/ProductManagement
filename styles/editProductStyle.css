@@ -1,0 +1,22 @@
+.main-page-link,
+.edit-date,
+.remove-div,
+.product-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.input-edit {
+    width: calc(50% - 1rem);
+    margin: 0.5rem;
+}
+
+@media only screen and (max-width: 500px) {
+    .input-edit {
+        width: 100%;
+        margin: 1rem;
+    }
+}
