@@ -172,12 +172,12 @@ select::-ms-expand {
     width: 100%;
 }
 
-input[type='checkbox'] {
+input[id='existProduct'] {
     height: 0;
     width: 0;
 }
 
-input[type='checkbox']+label {
+input[id='existProduct']+label {
     position: relative;
     display: flex;
     margin: .6em 0em;
@@ -185,11 +185,11 @@ input[type='checkbox']+label {
     transition: color 250ms cubic-bezier(.4, .0, .23, 1);
 }
 
-input[type='checkbox']+label>ins {
+input[id='existProduct']+label>ins {
     position: absolute;
     display: block;
     bottom: 0;
-    /* right: 2em; */
+    right: 2em;
     height: 0;
     width: 100%;
     overflow: hidden;
@@ -197,15 +197,13 @@ input[type='checkbox']+label>ins {
     transition: color 250ms cubic-bezier(.4, .0, .23, 1);
 }
 
-input[type='checkbox']+label>ins>i {
+input[id='existProduct']+label>ins>i {
     position: absolute;
-    bottom: 0;
-    right: 2em;
     font-style: normal;
     color: #39395f;
 }
 
-input[type='checkbox']+label>.span-check {
+input[id='existProduct']+label>.span-check {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -219,33 +217,32 @@ input[type='checkbox']+label>.span-check {
     transition: color 250ms cubic-bezier(.4, .0, .23, 1);
 }
 
-input[type='checkbox']+label:hover {
+input[id='existProduct']+label:hover {
     cursor: pointer;
 }
 
-input[type='checkbox']+label:hover>.span-check {
+input[id='existProduct']+label:hover>span {
     background: rgba(255, 255, 255, .1);
 }
 
-input[type='checkbox']:checked+label>.span-text {
+input[id='existProduct']:checked+label>.span-text {
     visibility: hidden;
 }
 
-input[type='checkbox']:checked+label>ins {
+input[id='existProduct']:checked+label>ins {
     height: 100%;
-    padding: 0.25rem;
 }
 
-input[type='checkbox']:checked+label>.span-check {
+input[id='existProduct']:checked + label > .span-check {
     border: .5em solid #52ab98;
     animation: shrink-bounce 200ms cubic-bezier(.4, .0, .23, 1);
 }
 
-input[type='checkbox']:checked+label>.span-check:before {
+input[id='existProduct']:checked + label > span:before {
     content: "";
     position: absolute;
-    top: .6em;
-    right: .4em;
+    top: 0.6em;
+    right: 0.4em;
     border-right: 3px solid transparent;
     border-bottom: 3px solid transparent;
     transform: rotate(45deg);
@@ -299,13 +296,14 @@ input[type='checkbox']:checked+label>.span-check:before {
 }
 
 #products div {
-    color: #52ab98;
+    /* color: #52ab98; */
     display: flex;
 }
 
 .empty-message {
     color: #fff;
-    text-align: center;
+    margin: auto;
+    width: fit-content;
 }
 
 .product-row {
@@ -331,8 +329,13 @@ input[type='checkbox']:checked+label>.span-check:before {
     cursor: pointer;
     margin-right: 1rem;
     width: 3rem;
+    height: 3rem;
 }
-
+.div-section {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
 /* MEDIA QUERY */
 
 @media only screen and (max-width: 950px) {
