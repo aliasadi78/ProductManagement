@@ -27,7 +27,17 @@ const sortProducts = function (products, sortBy) {
                 return 0
             }
         })
-    } else {
+    } else if (sortBy === 'byPrice') {
+        return products.sort(function (a, b) {
+            if (parseInt(a.price) > parseInt(b.price)) {
+                return -1
+            } else if (parseInt(a.price) < parseInt(b.price)) {
+                return 1
+            } else {
+                return 0
+            }
+        })
+    }else {
         return products
     }
 }
@@ -101,9 +111,16 @@ const createProductDOM = function (product) {
     spanText.textContent = product.title
     spanText.setAttribute('href', `./edit-product.html#${product.id}`)
 
-    label.appendChild(spanCheck)
+    const spanPrice = document.createElement('span')
+    spanPrice.textContent = `قیمت : ${product.price}`
 
-    divSection.appendChild(spanText)
+    label.appendChild(spanCheck)
+    const spanProduct = document.createElement('span')
+    spanProduct.setAttribute('class', 'span-product')
+
+    spanProduct.appendChild(spanText)
+    spanProduct.appendChild(spanPrice)
+    divSection.appendChild(spanProduct)
     divSection.appendChild(checkbox)
     divSection.appendChild(label)
 
