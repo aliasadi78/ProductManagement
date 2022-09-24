@@ -1,0 +1,405 @@
+@font-face {
+    font-family: 'Vazir-FD';
+    src: url('../fonts/Vazir-FD.woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+body {
+    font-family: 'Vazir-FD';
+    background-color: #f5eec2;
+}
+
+.header {
+    background-color: #39395f;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* MAIN */
+
+.main {
+    margin: 10px auto;
+    border: 2px solid #416a59;
+    width: 50%;
+    background-color: #f2f2f2;
+    border-radius: 1rem;
+    padding: 10px;
+}
+
+.search {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.input {
+    border: 1px solid #73a24e;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    outline: 0;
+    font-family: 'Vazir-FD';
+}
+
+.search-products {
+    border-radius: 0 1rem 1rem 0;
+    border-left: 0;
+    width: 100%;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+}
+
+.search-icon {
+    background-color: #fff;
+    border-radius: 1rem 0 0 1rem;
+    border: 1px solid #73a24e;
+    border-right: 0;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #416a59;
+    padding: 0.5rem;
+}
+
+.available-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+}
+
+.span-text {
+    color: #183a1d;
+}
+
+.add-product>form {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-gap: 1rem;
+}
+
+.btn {
+    font-family: 'Vazir-FD';
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.add-btn {
+    background-color: #6db784;
+}
+
+/* SELECT */
+select {
+    /* Reset Select */
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #000;
+    background-color: #c8d8e4;
+    background-image: none;
+    cursor: pointer;
+    font-family: 'Vazir-FD';
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+    display: none;
+}
+
+/* Custom Select wrapper */
+.select {
+    position: relative;
+    display: flex;
+    width: 50%;
+    height: 3em;
+    border-radius: .25em;
+    overflow: hidden;
+    margin: auto;
+}
+
+/* Arrow */
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    background-color: #2b6777;
+    color: #fff;
+    transition: .25s all ease;
+    pointer-events: none;
+}
+
+/* Transition */
+.select:hover::after {
+    color: #6db784;
+}
+
+/* CHECKBOX */
+
+.section-exist {
+    display: flex;
+}
+
+.section-product-exist {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+input[id='existProduct'] {
+    height: 0;
+    width: 0;
+}
+
+input[id='existProduct']+label {
+    position: relative;
+    display: flex;
+    margin: .6em 0em;
+    align-items: center;
+    transition: color 250ms cubic-bezier(.4, .0, .23, 1);
+}
+
+input[id='existProduct']+label>ins {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 2em;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    transition: color 250ms cubic-bezier(.4, .0, .23, 1);
+}
+
+input[id='existProduct']+label>ins>i {
+    position: absolute;
+    font-style: normal;
+    color: #39395f;
+}
+
+input[id='existProduct']+label>.span-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1em;
+    width: 1em;
+    height: 1em;
+    background: transparent;
+    border: 2px solid #39395f;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: color 250ms cubic-bezier(.4, .0, .23, 1);
+}
+
+input[id='existProduct']+label:hover {
+    cursor: pointer;
+}
+
+input[id='existProduct']+label:hover>span {
+    background: rgba(255, 255, 255, .1);
+}
+
+input[id='existProduct']:checked+label>.span-text {
+    visibility: hidden;
+}
+
+input[id='existProduct']:checked+label>ins {
+    height: 100%;
+}
+
+input[id='existProduct']:checked + label > .span-check {
+    border: .5em solid #52ab98;
+    animation: shrink-bounce 200ms cubic-bezier(.4, .0, .23, 1);
+}
+
+input[id='existProduct']:checked + label > span:before {
+    content: "";
+    position: absolute;
+    top: 0.6em;
+    right: 0.4em;
+    border-right: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    transform: rotate(45deg);
+    transform-origin: 0% 100%;
+    animation: checkbox-check 125ms 250ms cubic-bezier(.4, .0, .23, 1) forwards;
+}
+
+@keyframes shrink-bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    33% {
+        transform: scale(.85);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes checkbox-check {
+    0% {
+        width: 0;
+        height: 0;
+        border-color: #f1f1f1;
+        transform: translate3d(0, 0, 0) rotate(45deg);
+    }
+
+    33% {
+        width: .2em;
+        height: 0;
+        transform: translate3d(0, 0, 0) rotate(45deg);
+    }
+
+    100% {
+        width: .2em;
+        height: .5em;
+        border-color: #f1f1f1;
+        transform: translate3d(0, -.5em, 0) rotate(45deg);
+    }
+}
+
+/* CONTAINER */
+.container {
+    border: 2px solid #416a59;
+    border-radius: 1rem;
+    width: 50%;
+    margin: 1rem auto;
+    background-color: #52ab98;
+}
+
+#products div {
+    /* color: #52ab98; */
+    display: flex;
+}
+
+.empty-message {
+    color: #fff;
+    margin: auto;
+    width: fit-content;
+}
+
+.product-row {
+    width: 90%;
+    border: 1px solid #f2f2f2;
+    padding: 2em;
+    margin: 2em auto;
+    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 20%);
+    min-width: 0;
+    background-color: #f2f2f2;
+    background-clip: border-box;
+}
+
+.remove-btn {
+    background-color: crimson;
+    font-family: 'Vazir-FD';
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    width: 3rem;
+    height: 3rem;
+}
+.div-section {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.span-product {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+}
+/* MEDIA QUERY */
+
+@media only screen and (max-width: 950px) {
+    .main {
+        width: 70%;
+    }
+
+    .container {
+        width: 70%;
+    }
+
+    .search {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .add-product>form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .add-btn {
+        width: 50%;
+        height: 2rem;
+        margin: auto;
+    }
+
+    .select {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        width: 90%;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .section-product-exist {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .remove-btn {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .select {
+        width: 100%;
+        font-size: 0.5rem;
+    }
+}
