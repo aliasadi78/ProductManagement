@@ -4,49 +4,40 @@ const dateProduct = document.querySelector('#last-edit')
 
 const productId = location.hash.substring(1)
 let products = getSaveProducts()
-let product = products.find(function (item) {
-    return item.id === productId
-})
+let product = products.find(item => item.id === productId)
 
-if (product === undefined) {
-    location.assign('/index.html')
-}
+product === undefined && location.assign('/index.html')
 
 titleProduct.value = product.title
 priceProduct.value = product.price
 dateProduct.textContent = lastEditMessage(product.updated)
 
-titleProduct.addEventListener('input', function (e) {
+titleProduct.addEventListener('input', (e) => {
     product.title = e.target.value
     product.updated = moment().valueOf()
     dateProduct.textContent = lastEditMessage(product.updated)
     saveProducts(products)
 })
 
-priceProduct.addEventListener('input', function (e) {
+priceProduct.addEventListener('input', (e) => {
     product.price = e.target.value
     product.updated = moment().valueOf()
     dateProduct.textContent = lastEditMessage(product.updated)
     saveProducts(products)
 })
 
-document.querySelector('#remove-btn').addEventListener('click', function (e) {
+document.querySelector('#remove-btn').addEventListener('click', (e) => {
     removeProduct(product.id)
     saveProducts(products)
     location.assign('/index.html')
 })
-window.addEventListener('storage', function (e) {
+window.addEventListener('storage', (e) => {
     if (e.key === 'products') {
         products = JSON.parse(e.newValue)
-        product = products.find(function (item) {
-            return item.id = productId
-        })
-        if (product === undefined) {
-            location.assign('/index.html')
-        }
+        product = products.find(item => item.id = productId)
+        product === undefined && location.assign('/index.html')
         titleProduct.value = product.title
         priceProduct.value = product.price
         dateProduct.textContent = lastEditMessage(product.updated)
     }
 })
-
